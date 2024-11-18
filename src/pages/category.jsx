@@ -9,7 +9,9 @@ function Category() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("https://fakestoreapi.com/products/categories");
+      const response = await axios.get(
+        "https://fakestoreapi.com/products/categories"
+      );
       setdataarray(response.data);
     };
     fetchData();
@@ -20,9 +22,9 @@ function Category() {
       <h1>Categories</h1>
       <ul>
         {dataarray.map((category, index) => (
-           <li key={index}>
-           <Link to={`/products/${category}`}>{category}</Link>
-         </li>
+          <li key={index}>
+            <Link to={`/products/${category}`}>{category}</Link>
+          </li>
         ))}
       </ul>
     </>

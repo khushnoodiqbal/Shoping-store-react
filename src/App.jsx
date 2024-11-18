@@ -5,24 +5,30 @@ import ProductsDetails from "./pages/productsDetail";
 import Category from "./pages/category";
 import Categorypage from "./pages/categorypage";
 import PrivateRoute from "./components/private_route";
-
+import UserAuthContexts from "./contexts/userAuth";
+import Checkout from "./pages/checkout";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/products/:id" element={<ProductsDetails />} />
-        <Route
-          path="/products/:category?"
-          element={
-            <PrivateRoute>
-              <Fetchproducts />{" "}
-            </PrivateRoute>
-          }
-        />
+      <UserAuthContexts>
+        <Routes>
 
-        <Route path="/category" element={<Category />} />
-        <Route path="/category/:categoryName" element={<Categorypage />} />
-      </Routes>
+          <Route path="/products/:id" element={<ProductsDetails />} />
+          <Route path="/" element={<Fetchproducts />} />
+          <Route
+            path="/products/:category?"
+            element={
+              <PrivateRoute>
+                <Fetchproducts />{" "}
+              </PrivateRoute>
+            }
+          />
+
+          <Route path="/category" element={<Category />} />
+          <Route path="/checkout" element={<Checkout/>} />
+          <Route path="/category/:categoryName" element={<Categorypage />} />
+        </Routes>
+      </UserAuthContexts>
     </BrowserRouter>
   );
 }

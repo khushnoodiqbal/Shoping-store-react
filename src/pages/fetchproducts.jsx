@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import "./fetchproducts.css";
 import Products from "./products";
@@ -8,7 +8,7 @@ function Fetchproducts() {
   const [dataarray, setdataarray] = useState([]);
   const [searchstring, setsearchstring] = useState("");
   const [searchproduct, setsearchproduct] = useState([]);
-  const { category } = useParams(); 
+  const { category } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,6 +54,7 @@ function Fetchproducts() {
     <>
       <button onClick={ascending}>Ascending</button>
       <button onClick={descending}>Descending</button>
+     <Link to={"/checkout"}> Checkout </Link>
       <input
         type="text"
         placeholder="Search Product"
