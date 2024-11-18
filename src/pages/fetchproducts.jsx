@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./fetchproducts.css";
 import Products from "./products";
+import Navbar from "../components/navbar";
+import { FaTag } from "react-icons/fa"; // Import the FaTag icon
 
 function Fetchproducts() {
   const [dataarray, setdataarray] = useState([]);
@@ -23,14 +25,12 @@ function Fetchproducts() {
   useEffect(() => {
     let filteredProducts = dataarray;
 
-    // Filter by search string
     if (searchstring) {
       filteredProducts = filteredProducts.filter((product) =>
         product.title.toLowerCase().includes(searchstring.toLowerCase())
       );
     }
 
-    // Filter by category if provided in URL
     if (category) {
       filteredProducts = filteredProducts.filter(
         (product) => product.category.toLowerCase() === category.toLowerCase()
@@ -52,14 +52,22 @@ function Fetchproducts() {
 
   return (
     <>
-      <button onClick={ascending}>Ascending</button>
-      <button onClick={descending}>Descending</button>
-     <Link to={"/checkout"}> Checkout </Link>
-      <input
-        type="text"
-        placeholder="Search Product"
-        onChange={(e) => setsearchstring(e.target.value)}
+      <Navbar
+        searchstring={searchstring}
+        setsearchstring={setsearchstring}
+        ascending={ascending}
+        descending={descending}
       />
+      <div class="latest-drops">
+        <h2 class="special-offer">Special Offer</h2>
+        <h1 class="latest-drops-title">LATEST DROPS</h1>
+        <p class="description">
+          Looking for the latest trends in clothing, Jewelry and accessories?
+          Welcome to our 'Latest Drops' edit, bringing you all the latest styles
+          from all your fave brands.
+        </p>
+      </div>
+
       <div className="product-container">
         {searchproduct.map((element) => (
           <Products

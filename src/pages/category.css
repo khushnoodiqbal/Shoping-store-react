@@ -1,0 +1,84 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Overall Page Layout */
+  .category-page {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+  }
+  
+  /* Heading */
+  .category-heading {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+  }
+  
+  /* Category Grid */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  /* Category Card Styling */
+  .category-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  /* Link inside the Card */
+  .category-link {
+    display: block;
+    padding: 20px;
+    color: #333;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    background-color: #fff;
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    border-radius: 8px;
+  }
+  
+  /* Hover Effects for Card and Link */
+  .category-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category-link:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+    transform: translateY(-4px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .category-heading {
+      font-size: 1.8rem;
+    }
+  
+    .category-link {
+      font-size: 1.1rem;
+    }
+  }
+  

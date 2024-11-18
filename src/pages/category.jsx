@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./fetchproducts.css";
-import Products from "./products";
+import "./category.css"; // Updated CSS file
 import { Link } from "react-router-dom";
 
 function Category() {
@@ -18,16 +17,18 @@ function Category() {
   }, []);
 
   return (
-    <>
-      <h1>Categories</h1>
-      <ul>
+    <div className="category-page">
+      <h1 className="category-heading">Explore Categories</h1>
+      <div className="category-grid">
         {dataarray.map((category, index) => (
-          <li key={index}>
-            <Link to={`/products/${category}`}>{category}</Link>
-          </li>
+          <div key={index} className="category-card">
+            <Link to={`/products/${category}`} className="category-link">
+              {category}
+            </Link>
+          </div>
         ))}
-      </ul>
-    </>
+      </div>
+    </div>
   );
 }
 

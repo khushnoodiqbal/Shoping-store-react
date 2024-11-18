@@ -1,0 +1,238 @@
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #1a1d1d, #090707);
+    /* background: linear-gradient(90deg, #12acc7, #1f1f1f); */
+    padding: 15px 30px;
+    box-shadow: 0 4px 12px rgba(188, 36, 36, 0.2);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Ensures the links are centered vertically */
+}
+
+/* Logo adjustments */
+.navbar-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 35px;
+    margin-left: 40px;
+}
+
+/* Body adjustment to avoid overlapping */
+body {
+    margin: 0;
+    padding-top: 90px; /* Matches or exceeds navbar height */
+}
+
+/* Navbar links */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-link {
+    margin: 0 15px;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease; /* Added transition for smooth effect */
+}
+
+.navbar-link:hover {
+    color: #00b4d8;
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Navbar center */
+.navbar-center {
+    flex-grow: 1; /* Centers the search input in the available space */
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-search {
+    padding: 10px 15px;
+    width: 280px;
+    border: 1.5px solid rgb(126, 104, 8);
+    border-radius: 20px;
+    background-color: #2a2a2a;
+    color: #fff;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-search:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 231, 97, 0.7);
+    transform: scale(1.05);
+}
+
+/* Sort button styles */
+.sort-button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    background-color: #7c7c77ad;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sort-button:hover {
+    background-color: #151515;
+    transform: translateY(-2px);
+}
+
+/* Checkout button */
+.checkout-button {
+    margin-right: 50px;
+    padding: 10px 15px;
+    background-color: #ffa200;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.checkout-button:hover {
+    background-color: #ff8c00;
+    transform: scale(1.05);
+}
+
+.checkout-icon {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Ensure responsive behavior */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        height: auto; /* Allow height to adjust */
+    }
+
+    .navbar-search {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .navbar-left {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+
+    .navbar-link {
+        margin: 10px 0;
+    }
+
+    body {
+        padding-top: auto; /* Adjust padding dynamically */
+    }
+}
+
+
+
+
+
+
+
+
+/* Container for the Latest Drops section */
+.latest-drops {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Center text */
+    background-color: #ffffff; /* Light gray background */
+    padding: 40px 20px; /* Add some padding */
+    border-radius: 10px; /* Rounded corners */
+    /* Light shadow */
+    margin: 20px auto; /* Center the div horizontally with margin */
+    max-width: 1200px; /* Limit width */
+    opacity: 0;
+    animation: fadeInUp 1.2s forwards; /* Fade-in and slide-up animation */
+  }
+  
+  /* Animation for fading in and sliding up the container */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Styling for the "Special Offer" text */
+  .special-offer {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #f57224; /* Orange color */
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: fadeInUp 1.5s 0.2s forwards; /* Animation for fading in and sliding up */
+  }
+  
+  /* Styling for the "LATEST DROPS" title */
+  .latest-drops-title {
+    font-size: 2em; /* Large font size for title */
+    font-weight: 800;
+    color: #333; /* Dark text for better readability */
+    margin: 7px 0;
+    text-transform: uppercase;
+    opacity: 1;
+    animation: fadeInUp 1.5s 0.4s forwards; /* Animation for fading in and sliding up */
+  }
+  
+  /* Styling for the description text */
+  .description {
+    font-size: 1.1em;
+    color: #2d2a2aae; /* Lighter text color */
+    line-height: 1.6;
+    margin-top: 15px;
+    font-weight: 300; /* Lighter font weight */
+    max-width: 900px; /* Limit the width of the paragraph */
+    opacity: 1;
+    animation: fadeInUp 1.5s 0.6s forwards; /* Animation for fading in and sliding up */
+  }
+  
+  /* Add some hover effect to the title */
+  .latest-drops-title:hover {
+    color: #f57224; /* Change color on hover */
+    cursor: pointer;
+  }
+  
+  /* Fade-in and slide-up animation */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+

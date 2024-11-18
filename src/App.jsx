@@ -7,25 +7,26 @@ import Categorypage from "./pages/categorypage";
 import PrivateRoute from "./components/private_route";
 import UserAuthContexts from "./contexts/userAuth";
 import Checkout from "./pages/checkout";
+import Navbar from "./components/navbar"; // Import Navbar
+
 function App() {
   return (
     <BrowserRouter>
       <UserAuthContexts>
+        <Navbar />
         <Routes>
-
           <Route path="/products/:id" element={<ProductsDetails />} />
           <Route path="/" element={<Fetchproducts />} />
           <Route
             path="/products/:category?"
             element={
               <PrivateRoute>
-                <Fetchproducts />{" "}
+                <Fetchproducts />
               </PrivateRoute>
             }
           />
-
           <Route path="/category" element={<Category />} />
-          <Route path="/checkout" element={<Checkout/>} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/category/:categoryName" element={<Categorypage />} />
         </Routes>
       </UserAuthContexts>

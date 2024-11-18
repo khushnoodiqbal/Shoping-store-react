@@ -1,7 +1,8 @@
 /* Global styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #c5c0c0;
+  background-color: #fdfdfd;
+  /* background-color: #ffaa0d; */
   /* background-color: #413e3e; */
   display: flex;
   justify-content: center;

@@ -11,7 +11,7 @@ function Products(props) {
       <Link to={`/products/${props.id}`} style={{ textDecoration: "none" }}>
         <img src={props.image} alt={props.title} className="product-image" />
         <div className="product-info">
-          <h2 className="product-title">{props.title}</h2>
+         <h2 className="product-title">{props.title.split(" ").slice(0, 3).join(" ")}</h2>
           <p className="product-category">{props.category}</p>
           <p className="product-price">Price: {props.price}$</p>
         </div>
