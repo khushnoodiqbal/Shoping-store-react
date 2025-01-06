@@ -11,8 +11,8 @@ The **E-commerce Store** is a dynamic web application built to enhance the onlin
 
 ## Technologies Used
 - React.js
-- HTML5 & CSS3
-- JavaScript (ES6+)
+- HTML & CSS
+- JavaScript
 - REST APIs (for fetching product data)
 
 ## ScreenShorts
